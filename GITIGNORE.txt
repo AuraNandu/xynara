@@ -1,0 +1,9 @@
+node_modules
+dist
+.dev.vars
+.wrangler
+.DS_Store
+*.local
+.env
+
+# Rename this to .gitignore if needed

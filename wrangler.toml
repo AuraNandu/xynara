@@ -1,0 +1,23 @@
+name = "xynara"
+compatibility_date = "2024-10-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# --- D1 Database ---
+# 1. Create it once: npx wrangler d1 create xynara-db
+# 2. Copy the database_id below, then:
+#    npm run db:migrate
+[[d1_databases]]
+binding = "DB"
+database_name = "xynara-db"
+database_id = "REPLACE_WITH_YOUR_D1_ID_AFTER_CREATE"
+migrations_dir = "migrations"
+
+# --- Worker API (optional, for /api) ---
+# The worker in ./worker handles auth, messages, groups, calls signaling.
+# If you deploy only Pages, the frontend falls back to localStorage.
+# To deploy worker separately: npx wrangler deploy worker/index.ts
+
+[vars]
+APP_NAME = "XYNARA"
+ADMIN_PASSWORD = "AuraNandu_2012"

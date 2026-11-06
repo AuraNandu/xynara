@@ -1,0 +1,29 @@
+{
+  "name": "xynara",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "XYNARA - Connect Beyond Reality. Futuristic Discord-like app. Vite + React + Cloudflare Workers + D1.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "worker:dev": "wrangler dev worker/index.ts",
+    "db:create": "wrangler d1 create xynara-db",
+    "db:migrate": "wrangler d1 migrations apply xynara-db --local && wrangler d1 migrations apply xynara-db --remote"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241000.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "wrangler": "^3.80.0"
+  }
+}
